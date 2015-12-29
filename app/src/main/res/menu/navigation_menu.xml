@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group_1">
+<item android:id="@+id/title_qiushi" android:title="糗事" android:icon="@mipmap/ic_report_dark"/>
+<item android:id="@+id/title_qiuyoucircle" android:title="糗友圈" android:icon="@mipmap/ic_message_dark"/>
+<item android:id="@+id/title_faxian" android:title="发现" android:icon="@mipmap/abc_ic_search"/>
+<item android:id="@+id/title_xiaozitiao" android:title="小字条" android:icon="@mipmap/ic_send_dark"/>
+    </group>
+    <item android:title="小分组">
+        <menu>
+            <item android:id="@+id/group_shezhi" android:title="设置" android:icon="@mipmap/my_profile_edit_normal_dark"/>
+            <item android:id="@+id/group_wode" android:title="我的"  android:icon="@mipmap/im_ic_send_emotion_dark"/>
+            <item android:id="@+id/group_tuichu" android:title="退出" android:icon="@mipmap/direction_left_dark"/>
+        </menu>
+    </item>
+</menu>

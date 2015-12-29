@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kodulf.homework151228.MySlidingPaneLayout
+    android:id="@+id/home_page_drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    tools:context="com.kodulf.homework151228.HomePageActivity"
+   >
+
+<android.support.design.widget.NavigationView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/home_page_navigationView"
+    app:menu="@menu/navigation_menu"
+    app:headerLayout="@layout/navigation_header"
+    >
+
+</android.support.design.widget.NavigationView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FD2"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/qiu_ic_launcher"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="糗事百科"
+                android:layout_gravity="bottom"
+                android:textSize="30dp"/>
+        </LinearLayout>
+<android.support.design.widget.TabLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/main_tablayout"
+    app:tabTextColor="#000"
+    app:tabSelectedTextColor="#F00"
+    app:tabMode="fixed"
+    app:tabIndicatorColor="#00E"
+    >
+
+</android.support.design.widget.TabLayout>
+    <android.support.v4.view.ViewPager
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#999"
+        android:id="@+id/home_page_viewpager"
+        >
+
+</android.support.v4.view.ViewPager>
+    </LinearLayout>
+
+</com.kodulf.homework151228.MySlidingPaneLayout>
