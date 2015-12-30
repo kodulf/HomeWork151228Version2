@@ -78,7 +78,9 @@ public class ItemAdapter extends BaseAdapter {
                     .into(holder.image);
 
         }
-
+        holder.funny.setText(item.getFunny());
+        holder.comments.setText(item.getComments());
+        holder.share.setText(item.getShare());
         Log.d("151229MY", "postion=" + position + " Name=" + item.getUserName() + " content=" + item.getContent());
 
         return convertView;
@@ -104,11 +106,17 @@ public class ItemAdapter extends BaseAdapter {
         private ImageView image;
         private TextView content;
         private TextView name;
+        private TextView comments;
+        private TextView share;
+        private TextView funny;
         public ViewHolder(View itemView){
             icon =(ImageView)itemView.findViewById(R.id.user_icon);
             image =(ImageView)itemView.findViewById(R.id.image);
             content =(TextView)itemView.findViewById(R.id.content);
             name=(TextView)itemView.findViewById(R.id.user_name);
+            comments=(TextView)itemView.findViewById(R.id.comments);
+            share=(TextView)itemView.findViewById(R.id.share);
+            funny=(TextView)itemView.findViewById(R.id.funny);
         }
     }
 

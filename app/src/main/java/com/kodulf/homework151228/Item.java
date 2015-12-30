@@ -12,6 +12,33 @@ public class Item
     private String userName;
     private String content;
     private String image;
+    private String funny;
+    private String share;
+    private String comments;
+
+    public String getFunny() {
+        return funny;
+    }
+
+    public void setFunny(String funny) {
+        this.funny = funny;
+    }
+
+    public String getShare() {
+        return share;
+    }
+
+    public void setShare(String share) {
+        this.share = share;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
 
     public long getUserId() {
         return userId;
@@ -46,6 +73,9 @@ public class Item
             image = object.getString("image");
         }
         content =object.getString("content");
+        comments=object.getString("comments_count");
+        share=object.getString("share_count");
+        funny=object.getJSONObject("votes").getString("up");
     }
 
     public String getUserIcon() {
