@@ -9,9 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+import android.widget.ListView;
+import android.widget.TextView;
 
+import com.kodulf.homework151228.ItemAdapter;
 import com.kodulf.homework151228.R;
 import com.kodulf.homework151228.adapter.QiuShiLittleFragmentPagerAdapter;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +39,7 @@ public class QiuShiFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
+
 
     @Nullable
     @Override
