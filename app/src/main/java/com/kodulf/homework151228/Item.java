@@ -3,10 +3,12 @@ package com.kodulf.homework151228;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 15-12-29.
  */
-public class Item
+public class Item implements Serializable
 {
     private String userIcon;
     private String userName;
@@ -15,6 +17,15 @@ public class Item
     private String funny;
     private String share;
     private String comments;
+    private String QiushiId;
+
+    public String getQiushiId() {
+        return QiushiId;
+    }
+
+    public void setQiushiId(String qiushiId) {
+        QiushiId = qiushiId;
+    }
 
     public String getFunny() {
         return funny;
@@ -76,6 +87,7 @@ public class Item
         comments=object.getString("comments_count");
         share=object.getString("share_count");
         funny=object.getJSONObject("votes").getString("up");
+        QiushiId=object.getString("id");
     }
 
     public String getUserIcon() {

@@ -1,6 +1,8 @@
 package com.kodulf.homework151228;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +21,10 @@ import java.util.regex.Pattern;
 /**
  * Created by Administrator on 15-12-29.
  */
-public class ItemAdapter extends BaseAdapter {
+public class ItemAdapter extends BaseAdapter implements View.OnClickListener {
     private Context context;
     private List<Item> items;
+    private Item currentItem;
 
     public ItemAdapter(Context context) {
         this.context = context;
@@ -65,6 +68,10 @@ public class ItemAdapter extends BaseAdapter {
             holder.icon.setImageResource(R.mipmap.ic_launcher);
         }
         holder.content.setText(item.getContent());
+
+        currentItem=items.get(position);
+        holder.content.setOnClickListener(this);
+
         if(item.getImage()==null){
             holder.image.setVisibility(View.GONE);
         }else{
@@ -78,6 +85,7 @@ public class ItemAdapter extends BaseAdapter {
                     .into(holder.image);
 
         }
+        holder.image.setOnClickListener(this);
         holder.funny.setText(item.getFunny());
         holder.comments.setText(item.getComments());
         holder.share.setText(item.getShare());
@@ -99,6 +107,15 @@ public class ItemAdapter extends BaseAdapter {
         matcher.find();
         Log.d("151229MY", "getImageURL: " + matcher.group());
         return String.format(url, matcher.group(1), matcher.group(), "medium", image);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(context,Detail.class);
+        Bundle bundle =new Bundle();
+        bundle.putSerializable("detail",currentItem);
+        intent.putExtras(bundle);
+        context.startActivity(intent);
     }
 
     private static class ViewHolder{
